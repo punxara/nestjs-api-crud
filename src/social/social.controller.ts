@@ -20,11 +20,6 @@ export class SocialController {
         return await this.service.update(id, item);
     }
 
-    @Put("change-publicity/:id")
-    async changePublicity(@Param("id") id: number, @Body() isPublic: {}): Promise<Social> {
-        return await this.service.changePublicity(id, isPublic);
-    }
-
     @Get('get-by-id/:id')
     async get(@Param('id') id: string): Promise<Social> {
         return await this.service.get(+id);
