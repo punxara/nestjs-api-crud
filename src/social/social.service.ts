@@ -73,6 +73,6 @@ export class SocialService {
     }
 
     async remove(id: number): Promise<any> {
-        return await this.entityManager.remove({id});
+        return await this.entityManager.remove('Social',{id});
     }
 }
