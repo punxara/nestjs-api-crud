@@ -71,4 +71,8 @@ export class SocialService {
     async getAll(): Promise<SocialDto[]> {
         return await this.entityManager.find(Social);
     }
+
+    async remove(id: number): Promise<any> {
+        return await this.entityManager.remove({id});
+    }
 }

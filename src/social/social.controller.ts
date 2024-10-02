@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Post, Put} from "@nestjs/common";
+import {Body, Controller, Delete, Get, Param, Post, Put} from "@nestjs/common";
 import {SocialService} from "./social.service";
 import {Social} from "./social.entity";
 
@@ -33,5 +33,10 @@ export class SocialController {
     @Get('get-all-socials')
     getAll(): Promise<Social[]> {
         return this.service.getAll();
+    }
+
+    @Delete(':id')
+    remove(@Param('id') id: number): Promise<any> {
+        return this.service.remove(+id);
     }
 }
