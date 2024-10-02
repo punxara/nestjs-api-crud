@@ -6,6 +6,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import { SocialController } from './social/social.controller';
 import { SocialService } from './social/social.service';
 import { SocialModule } from './social/social.module';
+import {Social} from "./social/social.entity";
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { SocialModule } from './social/social.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [
-
+        Social
       ],
       synchronize: true,
       logging: false
